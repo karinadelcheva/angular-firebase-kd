@@ -1,0 +1,26 @@
+input, select, textarea .userData {
+    color: #5c5f81;
+    min-width: 300px;
+}
+
+.edit-label {
+    z-index: -1;
+    width: 100%;
+    margin-bottom: 5px;
+    padding-left: 2px;
+    opacity: 0.6;
+    color: #b89d0b;
+    font-size: 15px;
+    font-weight: 400;
+    text-align: left;
+}
+
+.mat-dialog-container {
+    width: 800px;
+}
+
+textarea {
+    margin: 0px 0px 15px;
+    height: 176px !important;
+    width: 474px !important;
+}

@@ -1,0 +1,35 @@
+<section>
+  <div class="card-container">
+
+    <div class="custom-dropzone" ngx-dropzone [accept]="'image/*'" (change)="onSelect($event)">
+      <ngx-dropzone-label>
+        <div>
+          <h2>Постави файла тук</h2>
+        </div>
+      </ngx-dropzone-label>
+      <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" *ngFor="let f of files" [file]="f"
+        [removable]="true" (removed)="onRemove(f)">
+        <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+      </ngx-dropzone-image-preview>
+    </div>
+  </div>
+  <div class="row" style="margin: 3%;">
+    <div class="col-md-3">
+      <button class="button w-inline-block" (click)="onImageUpdate()">Качи</button>
+    </div>
+
+    <div class="col-md-2">&nbsp;</div>
+
+    <div class="col-md-7">
+
+      <button class="button  w-inline-block" (click)="cancelUpload()">Спри качването</button>
+    </div>
+
+  </div>
+
+  <div class="row" *ngIf="isUploading">
+    <div class="col-md-12">
+      `Upload is {{progress}}% done!`
+    </div>
+  </div>
+</section>

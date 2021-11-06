@@ -1,0 +1,31 @@
+<!-- Top navigation -->
+
+<div class="navigation-wrap">
+    <nav role="navigation" class="navigation-items w-nav-menu">
+      <a routerLink="/landing" routerLinkActive="active" class="navigation-item w-nav-link">Home</a>
+      <a routerLink="/about-us" routerLinkActive="active" class="navigation-item w-nav-link">About</a>
+
+      <a routerLink="/dashboard" routerLinkActive="active" *ngIf="authService.userLoggedIn"
+        class="navigation-item w-nav-link">Dashboard</a>
+      <a [routerLink]="['/profile-page', authService.user.uid]" *ngIf="authService.userLoggedIn && authService.user" routerLinkActive="active"
+        class="navigation-item w-nav-link">Profile</a>
+      <a routerLink="/membership" *ngIf="authService.userLoggedIn==false" routerLinkActive="active"
+        class="navigation-item w-nav-link">Membership</a>
+
+    </nav>
+  <a routerLink="/sign-in" class="button login-button" *ngIf="!authService.userLoggedIn">
+    <div>Log in</div>
+  </a>
+  <a (click)="authService.signOut()" class="button cc-white-button login-button" *ngIf="authService.userLoggedIn">
+    <div>Log out</div>
+  </a>
+</div>
+<router-outlet></router-outlet>
+
+<div class="section footer-section">
+  <div class="container">
+    <div class="footer-wrap">
+        <div class="paragraph-tiny footer-copyright">Copyright © 2021. Delcheva n Sis</div>
+    </div>
+  </div>
+</div>

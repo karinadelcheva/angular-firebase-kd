@@ -1,0 +1,106 @@
+<br><br><br><br>
+<div class="header-image">
+  <img src="../../../assets/images/club-header (1).jpg" alt="">
+</div>
+<br>
+<div class="section">
+  <div class="container">
+    <div class="motto-wrap">
+      <div class="label cc-light">Членство</div>
+      <div class="heading-jumbo-small">Стани член на Celebrity Club</div>
+    </div>
+    <div class="divider"></div>
+
+    <div class="w-layout-grid about-grid cc-about-3">
+      <div>
+        <div class="home-section-wrap">
+          <div class="label cc-light"></div>
+          <h2 class="section-heading">Lorem Ipsum</h2>
+          <p>
+            За да включите вашият бизнес, услуга или марка в членовете на “Celebrity club” e нужно да подадете своята
+            заявка чрез контактната ни форма. Нашето жури ще прегледа и обработи заявката в седемдневен срок. При нужда
+            от допълнителна информация или след като сте одобрени наш служител ще се свърже с вас чрез контактите, които
+            сте оставили. След като сме ви одобрили за членство ще получите от нашия екип всички стикери, които да
+            направят разпознаваемо вашето участие при нас. Освен това ще получите персонализиран достъп до основната
+            база данни на нашия сайт и ще можете да виждате кои са другите членове и кои са знаменитостите, които сме
+            удостоили с наградата “Celebrity club”. След като имате персонализиран достъп ще можете да управлявате
+            информацията, която да оставите в сайта за вас, вашият бизнес, услуга или марка. Така ще можете да се
+            презентирате по най-добрият за вас начин.
+
+          </p>
+          <p>
+            Членовете на ‘CELEBRITY CLUB” подписват договор, който гарантира нашите правни взаимоотношения, заплащането
+            на членския внос и отстъпките, които ще предложи вашият бизнес на нашите знаменитости. Всеки притежател на
+            персонализирана карта, която удостоверява, че сме дали наградата „CELEBRITY CLUB“ на въпросното лице ще
+            получи отстъпка от цената на предлаганите от вас услуги или продукти след като покаже на ваш служител
+            направените хаштагове в личните си социални мрежи.
+
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+    <div class="divider"></div>
+    <br>
+    <br>
+    <div class="membership-form">
+      <h2>Запитване за членство</h2>
+      <br>
+      <form
+        id="membership-form"
+        [formGroup]="formData"
+        (ngSubmit)="sendMembershipRequest(formData.value)"
+        class="memberstack-form"
+        class="authBlock">
+        <div class="field-row">
+          <div class="field-wrapper first-name-wrapper formGroup">
+            <label for="node" class="signup-label">Име на заявителя</label>
+            <input type="text" maxlength="256" formControlName="requesterName" class="membership-field" #requesterName required>
+          </div>
+          <div class="field-wrapper">
+            <label for="node" class="signup-label">Име на компанията</label>
+            <input type="text" maxlength="356" formControlName="companyName"  class="membership-field" #companyName required>
+          </div>
+        </div>
+        <div class="field-wrapper">
+          <label for="node" class="signup-label">Email</label>
+          <input type="email" maxlength="256" formControlName="email" class="membership-field" #requesterEmail required>
+
+        </div>
+
+        <div class="field-wrapper">
+          <label for="Password-3" class="signup-label">Информация за бизнеса</label>
+          <textarea name="businessInfo" name="businessInfo" formControlName="companyInformation" data-name="businessInfo" id="businessInfo" #businessInfo
+            cols="118" rows="5"></textarea>
+        </div>
+        <button
+          type="submit"
+          class="button w-inline-block"> <div>Подай запитване</div></button>
+
+      </form>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="w-layout-grid about-grid cc-about-2">
+      <div id="w-node-_86e64837-0616-515b-4568-76c147234d41-c92c3fea">
+        <div class="home-section-wrap">
+          <div class="label cc-light">Събития</div>
+          <h2 class="section-heading">Our Services</h2>
+          <p>
+            „Celebrity club” е организация, която често участва или инициира благотворителни събития.
+            Вашето членство и подкрепа на тези събития ще бъдат показани във всички наши печатни или
+            интернет
+            материали.
+          </p>
+        </div>
+        <!-- <a routerLink="/events" class="button w-inline-block">
+          <div>Виж повече</div>
+        </a> -->
+      </div><img src="../../../assets/images/services.png" alt="">
+    </div>
+  </div>
+</div>

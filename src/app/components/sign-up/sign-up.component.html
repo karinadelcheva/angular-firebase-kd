@@ -1,0 +1,133 @@
+<br><br><br>
+<div class="section">
+<div  class="card login-container">
+  <div class="login-container w-form">
+    <h1 class="login-head">Регистрирай се</h1>
+    <div class="authBlock" [hidden]="authService.allowSignUp">
+      <div class="formGroup">
+        <label for="node" class="signup-label">Личен код</label>
+        <input type="number" class="formControl signup-field  " placeholder="enter personal code" #userPC required>
+      </div>
+
+      <div class="formGroup">
+        <input  (click)="confirmPersonalCode(userPC.value)" type="submit" value="Напред"
+        data-wait="Please wait..." class="button cc-contact-us w-inline-block">
+      </div>
+      <br>
+      <br>
+
+    </div>
+
+
+    <!-- if this form is a for a celeb -->
+    <form
+      [formGroup]="formData"
+      id="sign-up"
+      class="memberstack-form"
+      *ngIf="authService.allowSignUp">
+      <div *ngIf="isCelebrity">
+
+        <div class="field-row" >
+          <div class="field-wrapper first-name-wrapper formGroup">
+            <label for="node" class="signup-label">Име</label>
+            <input
+              type="text"
+              maxlength="256"
+              class="signup-field  "
+              #userFirstName
+              formControlName="userFirstName"
+              >
+          </div>
+          <div class="field-wrapper">
+            <label for="node" class="signup-label">Фамилия</label>
+            <input
+              type="text"
+              maxlength="256"
+              class="signup-field  "
+              #userLastName
+              formControlName="userLastName" >
+            </div>
+        </div>
+        <div class="field-row" >
+          <div class="field-wrapper first-name-wrapper formGroup">
+            <label for="node" class="signup-label">email</label>
+            <input
+              type="text"
+              maxlength="256"
+              class="signup-field  "
+              #email
+              formControlName="email" >
+          </div>
+          <div class="field-wrapper">
+            <label for="Password-3" class="signup-label">Парола</label>
+            <input
+              type="password"
+              class="signup-field  "
+              maxlength="256"
+              name="Password"
+              data-name="Password"
+              #userPwd
+              formControlName="userPwd" >
+          </div>
+        </div>
+      </div>
+
+      <!-- if this form is a business partner -->
+      <div *ngIf="isBusiness">
+        <div class="field-row" >
+          <div class="field-wrapper first-name-wrapper formGroup">
+            <label for="node" class="signup-label">Име</label>
+            <input
+              type="text"
+              maxlength="256"
+              class="signup-field  "
+              #name
+              formControlName="name" >
+          </div>
+
+        </div>
+        <div class="field-row" >
+          <div class="field-wrapper first-name-wrapper formGroup">
+            <label for="node" class="signup-label">email</label>
+            <input
+              type="text"
+              maxlength="256"
+              class="signup-field  "
+              #email
+              formControlName="email" >
+          </div>
+          <div class="field-wrapper">
+            <label for="Password-3" class="signup-label">Парола</label>
+            <input
+              type="password"
+              class="signup-field  "
+              maxlength="256"
+              name="Password"
+              data-name="Password"
+              #userPwd
+              formControlName="userPwd" >
+          </div>
+        </div>
+      </div>
+        <!-- <label class="w-checkbox gdpr-checkbox">
+          <input type="checkbox"
+          id="checkbox" name="checkbox" data-name="Checkbox" required="" class="w-checkbox-input">
+          <span for="checkbox"
+          class="terms-text w-form-label"> I agree to the <a href="#" class="login-page-link">Terms</a> and <a href="#"
+            class="login-page-link">Privacy Policy</a>
+          </span>
+        </label> -->
+        <input (click)="authService.signUp(formData.value)" type="submit" value="Create my account"
+        data-wait="Please wait..." class="button cc-contact-us w-inline-block">
+    </form>
+    <div class="w-form-done">
+      <div>Thank you! Your submission has been received!</div>
+    </div>
+    <div class="error-message w-form-fail">
+      <div>Oops! Something went wrong while submitting the form.</div>
+    </div>
+    <div class="redirectToLogin">
+      <span>Вече си регистриран? <span class="redirect" routerLink="/sign-in"><a>Влез от тук</a></span></span>
+    </div>
+  </div>
+</div>

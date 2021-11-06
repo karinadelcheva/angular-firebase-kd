@@ -1,0 +1,28 @@
+.card {
+    box-shadow: 0 4px 8px 0 rgba(34, 34, 32, 0.2), 0 6px 20px 0 rgba(48, 42, 42, 0.19);
+    text-align: center;
+    margin: 3%;
+    background: white;
+  }
+
+
+.login-card {
+  position: relative;
+  padding: 7%;
+  z-index: 10;
+  display: block;
+  max-width: 550px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 50px;
+}
+
+.login-container {
+  background-image: url('../../../assets/images/landing-simple.png') ;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  margin-bottom: 10%;
+  height: 80vh;
+}

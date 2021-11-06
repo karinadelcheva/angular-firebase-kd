@@ -1,0 +1,19 @@
+.card {
+    width: 250px;
+    box-shadow: 0 4px 8px 0 rgba(34, 34, 32, 0.2), 0 6px 20px 0 rgba(48, 42, 42, 0.19);
+    text-align: center;
+    margin: 5%;
+    background: white;
+  }
+
+.login-container {
+    padding: 5%;
+    position: relative;
+    z-index: 10;
+    display: block;
+    width: 100%;
+    max-width: 700px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 50px;
+  }

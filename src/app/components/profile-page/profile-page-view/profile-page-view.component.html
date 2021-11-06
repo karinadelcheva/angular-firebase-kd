@@ -1,0 +1,41 @@
+<!-- Show user data when logged in -->
+<div class="profile-page-view-container" *ngIf="user">
+  <div class="row">
+    <div class="col-md-1">
+      <span class="material-icons">
+        email
+        </span>
+    </div>
+    <div class="col-md-1">&nbsp;</div>
+    <div class="col-md-7">
+      <p><strong>{{user.email}}</strong></p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-1">
+      <span class="material-icons">
+        pin
+        </span>
+    </div>
+    <div class="col-md-1">&nbsp;</div>
+    <div class="col-md-7">
+      <p><strong>{{user.personalCode}}</strong></p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-1">
+      <span class="material-icons">
+        place
+        </span>        
+    </div>
+    <div class="col-md-1">&nbsp;</div>
+    <div class="col-md-7">
+      <p><strong>София, България</strong></p>
+    </div>
+  </div>
+
+
+
+</div>

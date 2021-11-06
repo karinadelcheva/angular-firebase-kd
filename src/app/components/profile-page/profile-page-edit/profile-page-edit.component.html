@@ -1,0 +1,158 @@
+<div>
+  <div style="padding: 5%; padding-top: 0;">
+
+    <h4>Редактирай профила си</h4>
+    <br>
+    <table [formGroup]="formData">
+      <tr>
+        <td>
+          <label for="node" class="edit-label">Email </label>
+        </td>
+        <td>&nbsp;</td>
+        <td>
+          <div class="formGroup">
+            <input type="email" class="formControl signup-field   userData" placeholder="" value="{{user.email}}"
+              #email
+              formControlName="email">
+          </div>
+          <div class="formGroup">
+          </div>
+        </td>
+      </tr>
+
+      <tr *ngIf="isCelebrity">
+        <td>
+          <label for="node" class="edit-label">Име </label>
+        </td>
+        <td>&nbsp;</td>
+        <td>
+          <div class="formGroup">
+            <input type="string" class="formControl signup-field   userData" placeholder=""
+              value="{{user.firstName}}" #firstName required
+              formControlName="firstName">
+          </div>
+        </td>
+      </tr>
+
+
+      <tr *ngIf="isCelebrity">
+        <td>
+          <label for="node" class="edit-label">Фамилия </label>
+        </td>
+        <td>&nbsp;</td>
+        <td>
+          <div class="formGroup">
+            <input type="string" class="formControl signup-field   userData" placeholder=""
+              value="{{user.lastName}}" #lastName required
+              formControlName="lastName">
+          </div>
+        </td>
+      </tr>
+
+
+      <tr *ngIf="isCelebrity">
+        <td>
+          <label for="node" class="edit-label">За мен </label>
+        </td>
+        <td>&nbsp;</td>
+        <td>
+          <div class="formGroup">
+
+              <textarea name="bio" name="bio" data-name="bio" id="bio" #businessInfo value="{{user.bio}}"
+              cols="118" rows="5"></textarea>
+          </div>
+        </td>
+      </tr>
+
+      <tr *ngIf="isBusiness">
+        <td>
+          <label for="node" class="edit-label">Име </label>
+        </td>
+        <td>&nbsp;</td>
+        <td>
+          <div class="formGroup">
+            <input type="string" class="formControl signup-field   userData" placeholder=""
+              value="{{user.name}}" #name required
+              formControlName="name">
+          </div>
+        </td>
+      </tr>
+
+
+      <tr *ngIf="isBusiness">
+        <td>
+          <label for="node" class="edit-label">За бизнеса </label>
+        </td>
+        <td>&nbsp;</td>
+        <td>
+          <div class="formGroup">
+
+              <textarea name="description" name="description" data-name="bio" id="bio" #companyInfo value="{{user.description}}"
+              cols="118" rows="5" formControlName="description"></textarea>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label for="" class="edit-label">Категории</label>
+        </td>
+        <td>&nbsp;</td>
+
+        <td>
+          <mat-form-field appearance="fill">
+            <mat-label>Избери</mat-label>
+            <mat-select [formControl]="categorySelection" (selectionChange)="updateSelection($event.value)" multiple>
+              <mat-option *ngFor="let category of celebrityCategoryOptions" [value]="category"  >{{category}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-chip-list aria-label="категории">
+            <mat-chip *ngFor="let category of selectedCategories">{{category}}</mat-chip>
+          </mat-chip-list>
+        </td>
+      </tr>
+      <tr *ngIf="isBusiness">
+        <td>
+          <label for="">Тагове</label>
+        </td>
+        <td>&nbsp;</td>
+        <td>
+          <input type="text" class="formControl signup-field   userData" placeholder="Добавете тагове, разделени със ','"
+          value="{{user.hashtags}}" #instagramHandle  formControlName="hashtags">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label for="" class="edit-label">Instagram</label>
+        </td>
+        <td>&nbsp;</td>
+        <td>
+          <input type="string" class="formControl signup-field   userData" placeholder=""
+              value="{{user.instagramHandle}}" #instagramHandle  formControlName="instagramHandle">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label for="" class="edit-label">Facebook</label>
+        </td>
+        <td>&nbsp;</td>
+        <td>
+          <input type="string" class="formControl signup-field   userData" placeholder=""
+              value="{{user.facebookURL}}" #facebookURL formControlName="facebookURL" >
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label for="" class="edit-label">Twitter</label>
+        </td>
+        <td>&nbsp;</td>
+        <td>
+          <input type="string" class="formControl signup-field   userData" placeholder=""
+              value="{{user.twitterHandle}}" #twitterHandle formControlName="twitterHandle" >
+        </td>
+      </tr>
+    </table>
+
+    <input type="button"  (click)="saveForm(formData.value)"
+      class="button cc-contact-us w-inline-block" style="float: center; color: white" value="Запази">
+  </div>
+  </div>

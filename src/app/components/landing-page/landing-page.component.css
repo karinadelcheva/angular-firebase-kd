@@ -1,0 +1,124 @@
+.landing-background {
+    background-image: url('../../../assets/images/landing-simple.png') ;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    margin-bottom: 10%;
+    height: 100vh;
+  }
+
+  .title-div {
+    margin-top: 70px;
+    text-align: right;
+    display: flex;
+    justify-content: center; /* align horizontal */
+    align-items: center; /* align vertical */
+
+  }
+
+  .title {
+    color: #020202;
+    font-family: 'Magilio' !important;
+    font-weight: 400;
+    font-size: 65px !important;
+    text-transform: uppercase;
+    margin-top: 15%;
+    margin-left: 25%;
+    margin-right: 25%;
+
+    line-height: 60px;
+  }
+
+  @media(max-width: 850px) {
+    #title {
+      font-size: max(11vw,52px);
+    }
+  }
+
+
+  @keyframes animStar {
+    from {
+      transform: translateY(0px);
+    }
+    to {
+      transform: translateY(-2000px);
+    }
+  }
+
+
+  .rotate {
+    margin: 50px;
+    max-height: 150px;
+    animation: animCoin 50s linear infinite;
+  }
+
+  @keyframes animCoin {
+    from {
+      transform: rotateY(360deg);
+    } to {
+      transform: rotateY(-360deg);
+    }
+  }
+
+/*************
+* FadeInRight *
+*************/
+
+@-webkit-keyframes fadeInRight {
+  0% {
+      opacity: 0;
+      -webkit-transform: translateX(400px);
+  }
+  50%{
+     opacity: 0.3;
+  }
+  100% {
+      opacity: 1;
+      -webkit-transform: translateX(0);
+  }
+}
+@keyframes fadeInRight {
+  0% {
+      opacity: 0;
+      transform: translateX(400px);
+  }
+  50%{
+     opacity: 0.3;
+  }
+  100% {
+      opacity: 1;
+      transform: translateX(0);
+  }
+}
+
+.fadeInRight{
+  opacity: 0;
+  -webkit-transform: translateX(400px);
+  transform: translateX(400px);
+}
+.fadeInRight.go {
+  -webkit-animation-name: fadeInRight;
+  animation-name: fadeInRight;
+}
+
+.section-watermark-right {
+  background-size: 800px ;
+  background-position: 0px;
+  background-position-y: 60vh;
+  background-position-x: 120vh;
+  background-repeat: no-repeat;
+  padding-bottom: 60px;
+  padding-top: 30px;
+}
+
+.section-watermark-left {
+  background-image: url('../../../assets/images/landing.png');
+  background-size: 800px ;
+  background-position: 0px;
+  background-position-y: 60vh;
+  background-repeat: no-repeat;
+  padding-bottom: 60px;
+  padding-top: 30px;
+}
+

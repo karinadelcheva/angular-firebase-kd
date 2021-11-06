@@ -1,0 +1,40 @@
+<br>
+<br>
+<br>
+<div class="login-container">
+
+
+  <div class="card login-card">
+    <div class="displayTableCell">
+
+      <div class="authBlock">
+        <h1>Вход</h1>
+        <div class="formGroup">
+          <label for="node" class="signup-label">Потребителско име или имейл</label>
+          <input type="text" class="formControl signup-field  " placeholder="Username" #userName required>
+        </div>
+
+        <div class="formGroup">
+          <label for="node" class="signup-label">Парола</label>
+          <input type="password" class="formControl  signup-field   " placeholder="Password" #userPassword
+            required>
+        </div>
+
+        <!-- Calling SignIn Api from AuthService -->
+
+        <a class="button cc-contact-us w-inline-block" (click)="authService.signIn(userName.value, userPassword.value)">
+          <div>Влез</div>
+        </a>
+        <br>
+        <div class="forgotPassword">
+          <span routerLink="/forgot-password">Забравена парола?</span>
+        </div>
+      </div>
+
+      <div class="redirectToLogin">
+        <span>Нямаш профил?<span class="redirect" routerLink="/register-user"><a> Регистрирай се тук</a></span></span>
+      </div>
+
+    </div>
+  </div>
+</div>

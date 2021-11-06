@@ -1,0 +1,14 @@
+<h2 mat-dialog-title>Качи нова профилна снимка</h2>
+<mat-dialog-content class="mat-typography">
+  <div class="profile-page-upload-images">
+    <div class="row">
+      <div class="col-md-8">
+        <app-file-upload [id]="user.uid"></app-file-upload>
+
+      </div>
+    </div>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button (click)="close()">Затвори</button>
+</mat-dialog-actions>

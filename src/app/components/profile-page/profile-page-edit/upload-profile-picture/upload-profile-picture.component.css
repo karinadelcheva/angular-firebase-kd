@@ -1,0 +1,11 @@
+
+.profile-page-upload-images {
+
+  margin: auto;
+
+  width: 750px;
+  height: 400px;
+  overflow: hidden;
+  font-family: "Spectral", serif;
+  color: #1d1d1b
+}

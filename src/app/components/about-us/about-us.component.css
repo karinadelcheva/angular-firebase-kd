@@ -1,0 +1,16 @@
+.section{
+    background-size: 800px ;
+
+    background-position: 0px;
+    background-position-y: 600px;
+    background-repeat: no-repeat;
+    padding-bottom: 60px;
+    padding-top: 30px;
+}
+
+.about-grid{
+    margin: 30px;
+    padding: 2%;
+    background-color: rgb(237 230 230 / 28%);
+    -ms-grid-columns: 1fr 80px 1fr;
+}
