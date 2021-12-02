@@ -16,7 +16,7 @@
   <a routerLink="/sign-in" class="button login-button" *ngIf="!authService.userLoggedIn">
     <div>Log in</div>
   </a>
-  <a (click)="authService.signOut()" class="button cc-white-button login-button" *ngIf="authService.userLoggedIn">
+  <a (click)="authService.signOut()" class="button login-button" *ngIf="authService.userLoggedIn">
     <div>Log out</div>
   </a>
 </div>

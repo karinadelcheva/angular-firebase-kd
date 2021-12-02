@@ -1,16 +1,21 @@
 .section{
     background-size: 800px ;
-
     background-position: 0px;
     background-position-y: 600px;
     background-repeat: no-repeat;
     padding-bottom: 60px;
     padding-top: 30px;
+    background: linear-gradient(217deg, #bba8eb, transparent),
+    url(https://grainy-gradients.vercel.app/noise.svg);
 }
 
 .about-grid{
     margin: 30px;
     padding: 2%;
-    background-color: rgb(237 230 230 / 28%);
+    background: rgb(237 230 230 / 48%);
     -ms-grid-columns: 1fr 80px 1fr;
+}
+
+.see-more-button {
+    width: 30%;
 }

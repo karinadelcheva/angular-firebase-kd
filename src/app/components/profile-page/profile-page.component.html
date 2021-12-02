@@ -30,16 +30,14 @@
         </div>
 
       </div>
-      <div>
-        <app-profile-page-view [user]="userData"></app-profile-page-view>
-      </div>
+      
       <div>
         <div class="row">
           <div class="col-md-9" *ngIf="isCelebrity">
-            <p style="color: white">{{user.bio !== '' ? user.bio : "Натисни 'Редактирай' за да добавиш био."}}</p>
+            <p >{{user.bio !== '' ? user.bio : "Натисни 'Редактирай' за да добавиш био."}}</p>
           </div>
           <div class="col-md-9" *ngIf="isBusiness">
-            <p style="color: white">{{user.description !== '' ? user.description : "Натисни 'Редактирай' за да добавиш био."}}</p>
+            <p >{{user.description !== '' ? user.description : "Натисни 'Редактирай' за да добавиш био."}}</p>
           </div>
         </div>
         <div class="row">
@@ -52,25 +50,25 @@
       <div>
         <div class="row social-media-row">
           <div class="col-md-1">
-            <img class="social-media-icon" src="../../../assets/icons/social/instagram.svg">
+            <img class="social-media-icon" src="../../../assets/icons/social/github-xxl.png">
           </div>
           <div class="col-md-1">&nbsp;</div>
           <div class="col-md-5"> {{user.instagramHandle}}</div>
         </div>
         <div class="row social-media-row">
           <div class="col-md-1">
-            <img class="social-media-icon" src="../../../assets/icons/social/facebook.svg">
+            <img class="social-media-icon" src="../../../assets/icons/social/email-14-xxl.png">
           </div>
           <div class="col-md-1">&nbsp;</div>
           <div class="col-md-5">
-            <a href="{{user.facebookURL}}" style="color: white;">Профил</a>
+            <a href="{{user.facebookURL}}">Profile</a>
 
           </div>
         </div>
 
         <div class="row social-media-row">
           <div class="col-md-1">
-            <img class="social-media-icon" src="../../../assets/icons/social/twitter.svg">
+            <img class="social-media-icon" src="../../../assets/icons/social/email-14-xxl.png">
           </div>
           <div class="col-md-1">&nbsp;</div>
           <div class="col-md-5"> {{user.twitterHandle}}</div>
@@ -80,7 +78,7 @@
       <div></div>
       <div *ngIf="isBusiness">
         <div class="row">
-          <span *ngIf="isMyProfile">Използвайте маркера на картата за да изберете адресa си</span>
+          <span *ngIf="isMyProfile">Use the marker on the map to enter your address</span>
           <!-- <div class="col-md-2">
             <label for="" class="edit-label"> Вашият адрес: </label>
           </div>

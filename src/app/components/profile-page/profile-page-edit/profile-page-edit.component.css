@@ -17,6 +17,8 @@ input, select, textarea .userData {
 
 .mat-dialog-container {
     width: 800px;
+    max-height: 100vh;
+    overflow-y: scroll;
 }
 
 textarea {

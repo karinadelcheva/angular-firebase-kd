@@ -36,15 +36,14 @@
   border-radius: 10px;
   box-shadow: 0 10px 25px 5px rgba(0, 0, 0, 0.2);
   background: #151515;
-  overflow: hidden;
 }
 
 
 .cc-edit-profile {
-  border-color: white;
+  border-color: #151515;
   border-radius: 25px;
   border:thin;
-  color:white;
+  color:#151515;
 }
 
 .blur {
@@ -67,20 +66,15 @@
   width: 200px;
   height: 200px;
   border-radius: 50%;
-  background: white;
-  overflow: hidden;
+  background: rgb(10, 47, 211);
   animation: mvTop 1.5s;
 }
 
 .profile-page-summary-card .avatar-holder img {
-  width: 100%;
-  height: 100%;
+  
   object-fit: cover;
 }
 
-h1 {
-  color: white !important;
-}
 
 .profile-page-summary-card .name {
   margin: auto;
@@ -95,7 +89,6 @@ h1 {
 }
 
 .profile-page-summary-card .name a {
-  color: white;
   text-decoration: none;
   font-weight: 700;
   font-size: 18px;
@@ -103,7 +96,6 @@ h1 {
 
 .profile-page-summary-card .name a:hover {
   text-decoration: underline;
-  color: rgb(212, 198, 153);
 }
 
 .profile-page-summary-card .name h6 {
@@ -111,7 +103,6 @@ h1 {
   left: 0;
   right: 0;
   bottom: 0;
-  color: white;
   width: 40px;
 }
 
@@ -129,7 +120,6 @@ h1 {
 
 .social-media-row {
   padding: 1%;
-  color: white;
 }
 
 @keyframes fadeInMove {

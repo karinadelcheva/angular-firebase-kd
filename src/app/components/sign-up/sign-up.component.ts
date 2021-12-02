@@ -11,21 +11,23 @@ import { AuthService } from "../../shared/services/auth.service";
 export class SignUpComponent implements OnInit {
   public isCelebrity: boolean = false;
   public isBusiness: boolean = false;
-  public formData: any;
+  public formData: FormGroup;
   constructor(
     public authService: AuthService,
     public builder: FormBuilder
   ) { }
 
   async confirmPersonalCode(code) {
-    await this.authService.confirmPersonalCode(code);
-
-    this.authService.personalCodeSnapshot.subscribe(personalCodeResult => {
+    let personalCodeSnapshot = await this.authService.confirmPersonalCode(code);
+    let personalCodeSubscription = personalCodeSnapshot.subscribe(personalCodeResult => {
       if (personalCodeResult.docs.length == 1) {
-        personalCodeResult.docs.forEach(doc => {
-          doc.get('userGroup') == 'business' ? this.isBusiness = true : this.isCelebrity = true;
-        })
+        let doc = personalCodeResult.docs[0];
+        this.authService.userData.userGroup = doc.get('userGroup');
+        this.authService.userData.personalCode = doc.get('personalCode');
+        this.authService.setUserDataInLS();
 
+
+        doc.get('userGroup') == 'business' ? this.isBusiness = true : this.isCelebrity = true;
         if (this.isBusiness) {
           this.formData = this.builder.group({
             name: new FormControl('', [Validators.required]),
@@ -39,16 +41,26 @@ export class SignUpComponent implements OnInit {
             userLastName: new FormControl('', [Validators.required]),
             userPwd: new FormControl('', [Validators.required]),
 
-          })
+          });
+          this.authService.allowSignUp = true;
+
+          console.log(this.formData);
+
+
         }
+
+      } else {
+        window.alert('Cannot find personal code')
+        return null;
       }
-    });
+    })
+
   }
 
   ngOnInit() {
 
   }
-  ngOnDestroy () {
+  ngOnDestroy() {
     this.authService.allowSignUp = false;
   }
 }

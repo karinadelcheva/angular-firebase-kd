@@ -1,7 +1,7 @@
 <div>
   <div style="padding: 5%; padding-top: 0;">
 
-    <h4>Редактирай профила си</h4>
+    <h4>Edit your profile</h4>
     <br>
     <table [formGroup]="formData">
       <tr>
@@ -22,7 +22,7 @@
 
       <tr *ngIf="isCelebrity">
         <td>
-          <label for="node" class="edit-label">Име </label>
+          <label for="node" class="edit-label">First Name </label>
         </td>
         <td>&nbsp;</td>
         <td>
@@ -37,12 +37,12 @@
 
       <tr *ngIf="isCelebrity">
         <td>
-          <label for="node" class="edit-label">Фамилия </label>
+          <label for="node" class="edit-label">Last Name </label>
         </td>
         <td>&nbsp;</td>
         <td>
           <div class="formGroup">
-            <input type="string" class="formControl signup-field   userData" placeholder=""
+            <input type="string" class="formControl signup-field userData" 
               value="{{user.lastName}}" #lastName required
               formControlName="lastName">
           </div>
@@ -52,13 +52,13 @@
 
       <tr *ngIf="isCelebrity">
         <td>
-          <label for="node" class="edit-label">За мен </label>
+          <label for="node" class="edit-label">About me </label>
         </td>
         <td>&nbsp;</td>
         <td>
           <div class="formGroup">
 
-              <textarea name="bio" name="bio" data-name="bio" id="bio" #businessInfo value="{{user.bio}}"
+              <textarea name="bio" formControlName="bio" id="bio" #bio value="{{user.bio}}"
               cols="118" rows="5"></textarea>
           </div>
         </td>
@@ -66,7 +66,7 @@
 
       <tr *ngIf="isBusiness">
         <td>
-          <label for="node" class="edit-label">Име </label>
+          <label for="node" class="edit-label">Name </label>
         </td>
         <td>&nbsp;</td>
         <td>
@@ -81,7 +81,7 @@
 
       <tr *ngIf="isBusiness">
         <td>
-          <label for="node" class="edit-label">За бизнеса </label>
+          <label for="node" class="edit-label">About </label>
         </td>
         <td>&nbsp;</td>
         <td>
@@ -94,13 +94,13 @@
       </tr>
       <tr>
         <td>
-          <label for="" class="edit-label">Категории</label>
+          <label for="" class="edit-label">Categories</label>
         </td>
         <td>&nbsp;</td>
 
         <td>
           <mat-form-field appearance="fill">
-            <mat-label>Избери</mat-label>
+            <mat-label>Choose</mat-label>
             <mat-select [formControl]="categorySelection" (selectionChange)="updateSelection($event.value)" multiple>
               <mat-option *ngFor="let category of celebrityCategoryOptions" [value]="category"  >{{category}}</mat-option>
             </mat-select>
@@ -112,7 +112,7 @@
       </tr>
       <tr *ngIf="isBusiness">
         <td>
-          <label for="">Тагове</label>
+          <label for="">Tags</label>
         </td>
         <td>&nbsp;</td>
         <td>

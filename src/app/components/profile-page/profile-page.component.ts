@@ -48,9 +48,6 @@ export class ProfilePageComponent implements OnInit {
       }
     });
 
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
-    });
   }
   openUserProfileEditDialog() {
     const dialogRef = this.dialog.open(ProfilePageEditComponent, {
@@ -59,11 +56,7 @@ export class ProfilePageComponent implements OnInit {
       }
     });
 
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
-    });
   }
-
 
 
   // Sets a business's address in DB
@@ -78,8 +71,6 @@ export class ProfilePageComponent implements OnInit {
   }
 
   async ngOnInit() {
-    
-
     this.sub = this.route.params.subscribe(async params => {
       let id = params['id'];
       if (id) {
@@ -87,6 +78,7 @@ export class ProfilePageComponent implements OnInit {
           .then(res => res.subscribe(async user => {
             if (user.exists) {
               this.userData = user.data();
+              console.log(this.userData)
               this.isMyProfile = this.userData.uid === this.authService.user.uid;
               this.isBusiness = false;
               this.isCelebrity = true;

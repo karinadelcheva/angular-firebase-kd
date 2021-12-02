@@ -102,21 +102,11 @@ export class AuthService {
     this.userData = {};
     try {
       this.personalCodeSnapshot = this.afs.collection('/personal-codes', ref => ref.where('personalCode', '==', parseInt(personalCode))).get()
-      this.personalCodeSubscription = this.personalCodeSnapshot.subscribe(personalCodeResult => {
-        if (personalCodeResult.docs.length == 1) {
-          personalCodeResult.docs.forEach(doc => {
-            this.userData.userGroup = doc.get('userGroup');
-            this.userData.personalCode = doc.get('personalCode');
-            this.setUserDataInLS();
-            this.allowSignUp = true;
-          })
-        } else {
-          window.alert('Cannot find personal code')
-        }
-      })
+      return this.personalCodeSnapshot;
     }
     catch (error: any) {
       window.alert('Issue connectiong to Database.');
+      return error;
     }
   }
 
@@ -127,16 +117,17 @@ export class AuthService {
       /* Call the SendVerificaitonMail() function when new user sign
       up and returns promise */
       this.sendVerificationMail();
-      if (userData.userGroup == 'celebrity') {
+      if (this.userData.userGroup == 'celebrity') {
           let formattedUser: ExtendedDatabaseUser = {
-          firstName: userData.firstName,
-          lastName: userData.lastName, 
+          firstName: userData.userFirstName,
+          lastName: userData.userLastName, 
           email: userData.email,
           emailVerified: result.user.emailVerified,
           personalCode: this.userData.personalCode,
           userGroup: this.userData.userGroup,
           uid: result.user.uid
         }
+        
 
         this.setUserData(formattedUser);
         

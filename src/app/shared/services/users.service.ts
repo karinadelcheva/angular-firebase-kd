@@ -34,7 +34,6 @@ export class UsersService {
       let userURL = 'users/' + id;
       const userRef = this.afs.doc(userURL).get()
       return userRef;
-
     }
     catch (error: any) {
       console.log('Issue connectiong to Database.', error.message);

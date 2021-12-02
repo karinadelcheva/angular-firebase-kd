@@ -74,12 +74,10 @@ mat-card {
     margin-bottom: 7rem;
 }
 
-/* social media icon styles */
-.social-media-icons {
-}
 
 .social-media-icon {
-    max-height: 85px
+    max-height: 35px;
+    margin: 5px;
 }
 
 .celebrity-card-container {

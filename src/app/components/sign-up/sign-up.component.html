@@ -123,7 +123,7 @@
     <div class="w-form-done">
       <div>Thank you! Your submission has been received!</div>
     </div>
-    <div class="error-message w-form-fail">
+    <div class="error-message" *ngIf="formData.errors">
       <div>Oops! Something went wrong while submitting the form.</div>
     </div>
     <div class="redirectToLogin">
