@@ -2,8 +2,8 @@
 <div class="section section-watermark-left">
   <div class="container" *ngIf="userData as user">
     <div class="profile-page-header ds-top">
-      <div class="avatar-holder" id="profile-picture">
-        <img src="{{user.profilePicURL}}" alt="">
+      <div  id="profile-picture">
+        <img src="{{user.profilePicURL}}" class="avatar-holder" alt="avatar">
       </div>
       <div class="personal-data-header">
         <div class="row" *ngIf="isCelebrity">
@@ -46,7 +46,45 @@
           </div>
         </div>
       </div>
-      <div></div>
+      <div>
+        <div *ngIf="isBusiness">
+          <div class="row">
+            <span *ngIf="isMyProfile">Use the marker on the map to enter your address</span>
+          </div>
+          <div class="maprouter row">
+            <div class="gmap_canvas_profile">
+              <agm-map  [latitude]="lat" [longitude]="lng" [zoom]="15" >
+                <agm-marker [latitude]="lat" [longitude]="lng" [markerDraggable]="true"
+                  (dragEnd)="markerDragEnd($event)"></agm-marker>
+              </agm-map><br>
+              <style>
+                .maprouter {
+                  position: relative;
+                  text-align: right;
+                  height: 30rem;
+                  width: auto
+                }
+              </style>
+              <style>
+                .gmap_canvas_profile {
+                  overflow: hidden;
+                  background: none !important;
+                  height: 30rem;
+                  width: auto;
+                }
+              </style>
+            </div>
+          </div>
+          <div>
+            <h5>Address: {{this.userData.address}}</h5>
+  
+          </div>
+          <div class="row" *ngIf="isMyProfile">
+            <input type="button" (click)="storeAddress()" class="button cc-edit-profile w-inline-block"
+              style=" float: left; margin-left: 0;" value="Запази">
+          </div>
+        </div>
+      </div>
       <div>
         <div class="row social-media-row">
           <div class="col-md-1">
@@ -76,54 +114,7 @@
         </div>
       </div>
       <div></div>
-      <div *ngIf="isBusiness">
-        <div class="row">
-          <span *ngIf="isMyProfile">Use the marker on the map to enter your address</span>
-          <!-- <div class="col-md-2">
-            <label for="" class="edit-label"> Вашият адрес: </label>
-          </div>
-          <div class="col-md-1"> &nbsp;</div> -->
-          <!-- <div class="form-group">
-            <input type="text" value={{address}} class="form-control" (keydown.enter)="$event.preventDefault()" placeholder="Намерете своят адрес" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" #search>
-          </div>
-          <div class="col-md-5">
-            <input type="text"  class="formControl
-            signup-field   userData"  value="{{user.address}}">
-          </div> -->
-        </div>
-        <div class="maprouter row">
-          <div class="gmap_canvas_profile">
-            <agm-map  [latitude]="lat" [longitude]="lng" [zoom]="15" >
-              <agm-marker [latitude]="lat" [longitude]="lng" [markerDraggable]="true"
-                (dragEnd)="markerDragEnd($event)"></agm-marker>
-            </agm-map><br>
-            <style>
-              .maprouter {
-                position: relative;
-                text-align: right;
-                height: auto;
-                width: auto
-              }
-            </style>
-            <style>
-              .gmap_canvas_profile {
-                overflow: hidden;
-                background: none !important;
-                height: 30rem;
-                width: auto;
-              }
-            </style>
-          </div>
-        </div>
-        <div>
-          <h5>Address: {{this.userData.address}}</h5>
-
-        </div>
-        <div class="row" *ngIf="isMyProfile">
-          <input type="button" (click)="storeAddress()" class="button cc-edit-profile w-inline-block"
-            style=" float: left; margin-left: 0;" value="Запази">
-        </div>
-      </div>
+      
     </div>
   </div>
 </div>

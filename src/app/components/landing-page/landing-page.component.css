@@ -24,8 +24,7 @@
     font-size: 65px !important;
     text-transform: uppercase;
     margin-top: 15%;
-    margin-left: 25%;
-    margin-right: 25%;
+    margin-right: 20%;
 
     line-height: 60px;
   }
@@ -37,12 +36,18 @@
   }
 
 
+  .rotateStar{
+    margin: 100px;
+    height: 120px;
+    animation: animStar 50s linear infinite;
+
+  }
+
   @keyframes animStar {
     from {
-      transform: translateY(0px);
-    }
-    to {
-      transform: translateY(-2000px);
+      transform: rotate(360deg);
+    } to {
+      transform: rotate(-360deg);
     }
   }
 
@@ -99,7 +104,7 @@
 }
 .fadeInRight.go {
   -webkit-animation-name: fadeInRight;
-  animation-name: fadeInRight;
+  animation: fadeInRight;
 }
 
 .section-watermark-right {

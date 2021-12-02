@@ -56,7 +56,7 @@
                 <div class="business-card-grid">
                   <div >
                     <img style="border-radius: 100px; max-width: 80% !important; vertical-align: middle;"
-                      src="{{business.profilePicURL ? business.profilePicURL : '../../assets/images/star-profile-pic.png'}}">
+                      src="{{business.profilePicURL ? business.profilePicURL : '../../assets/icons/icon-default.png'}}">
                   </div>
                   <div>
                     <a style="text-decoration: none;" [routerLink]="['/profile-page', business.uid]">
@@ -93,7 +93,7 @@
           <div class="row celebrity-grid">
             <div class="celebrity-card-container col-md-3" *ngFor='let celebrity of usersService.celebrities'>
               <img
-                src="{{celebrity.profilePicURL ? celebrity.profilePicURL  : '../../assets/images/star-profile-pic.png'}}"
+                src="{{celebrity.profilePicURL ? celebrity.profilePicURL  : '../../assets/icons/icon-default.png'}}"
                 alt="Avatar" class="celebrity-card-avatar" style="width:100%">
               <div class="celebrity-card-middle">
                 <div class="celebrity-card-text"><a

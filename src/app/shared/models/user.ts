@@ -91,7 +91,7 @@ export class DefaultUser implements User {
     this.email = '';
     this.emailVerified = false;
     this.personalCode = 123456;
-    this.profilePicURL = '/src/assets/images/star-profile-pic.png';
+    this.profilePicURL = '/src/assets/icons/icon-default.png';
     this.userGroup = '';
     this.firstName = '';
     this.lastName = '';
