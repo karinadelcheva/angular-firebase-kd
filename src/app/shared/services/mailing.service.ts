@@ -16,7 +16,7 @@ export class MailingService {
 
     return this.http.post(this.api, {
       email: formData.email,
-      _subject: `ФОРМА ЗА ЧЛЕНСТВО CELEBRITY CLUB ЗА ${formData.companyName}`,
+      _subject: ` Membership form ${formData.companyName}`,
       message: JSON.stringify(formData) 
     }, {headers: {'Access-Control-Allow-Origin':'*',}, responseType: 'text'}).pipe(
       map(
