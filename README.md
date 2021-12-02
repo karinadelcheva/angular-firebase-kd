@@ -1,5 +1,6 @@
 # AngularFirebaseCc
 💃 🔺 🔥 
+**Work in Progress - I'm changing a bunch of the CSS so it looks a bit wack at the moment...**
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.5.
 
 ## Development server
